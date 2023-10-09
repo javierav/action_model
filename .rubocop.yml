@@ -1,0 +1,55 @@
+require:
+  - rubocop-minitest
+  - rubocop-rake
+
+inherit_mode:
+  merge:
+    - Exclude
+    - Include
+    - Prefixes
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - "**/bin/**/*"
+    - "**/gemfiles/**/*"
+    - "**/Appraisals"
+  NewCops: enable
+  TargetRubyVersion: 2.7
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Metrics/ClassLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/MethodLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/ModuleLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Layout/LineLength:
+  Max: 120
